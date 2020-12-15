@@ -24,48 +24,48 @@ int P_Freq = R_Freq * (R_Batt / nImmediateBatteryLevel);
 // TIME VOID FOR TIME THEORY
 void wait(int temp)
 {
-wait1Msec( P_Freq * temp);
+  wait1Msec( P_Freq * temp);
 }
 
 // ROBOT FUNCTIONS
 // chassis void
 void driveL(int speed)
 {
-motor[C_F_Left] = speed;
-motor[ycable1DriveL] = speed;
+  motor[C_F_Left] = speed;
+  motor[ycable1DriveL] = speed;
 }
 
 // Right Drive Void
 void driveR(int speed)
 {
-motor[C_F_Right] = speed;
-motor[ycable2DriveR] = speed;
+  motor[C_F_Right] = speed;
+  motor[ycable2DriveR] = speed;
 }
 
 // Lift Void
 void lift(int speed)
 {
-motor[R_Lift] = speed;
-motor[L_Lift] = speed;
+  motor[R_Lift] = speed;
+  motor[L_Lift] = speed;
 }
 
 // Claw Void
 void flipper(int speed)
 {
-motor[Claw] = speed;
+  motor[Claw] = speed;
 }
 
 // Intake void
 void _intake(int speed)
 {
-motor[Intake] = speed;
+  motor[Intake] = speed;
 }
 
 // Shooter void
 void shooter(int speed)
 {
-motor[R_Shooter] = speed;
-motor[L_Shooter] = speed;
+  motor[R_Shooter] = speed;
+  motor[L_Shooter] = speed;
 }
 /*---------------------------------------------------------------------------*/
 /*                                                                           */
@@ -77,16 +77,16 @@ motor[L_Shooter] = speed;
 void FLAGS_TOP_2P()
 {
 //run shooter
-shooter (127);
-//wait for shooter to rev up
-wait (28);
-//run intake to bring ball up
-_intake(127);
-//wait for ball to come up
-wait(5);
-//set shooter and intake to 0
-shooter(0);
-_intake(0);
+  shooter (127);
+    //wait for shooter to rev up
+  wait (28);
+  //run intake to bring ball up
+  _intake(127);
+  //wait for ball to come up
+  wait(5);
+  //set shooter and intake to 0
+  shooter(0);
+  _intake(0);
 }
 
 
@@ -101,79 +101,79 @@ void FLAGS_TOP_4P_BLUE()
   // stop
   driveL(0);
   driveR(0);
-// run intake
+  // run intake
   _intake(127);
   wait(17.85);
   _intake(0);
   // go back to tile
   driveL(100);
-driveR(-100);
-wait(20.65);
-// turn to flags
-driveL(100);
-driveR(100);
-wait(9);
-/*
-// go back a bit
-driveL(100);
-driveR(-100);
-wait(15);
-// stop chassis
-driveL(0);
-driveR(0);
-wait(8);
-// run intake to shoot middle flag
-_intake(127);
-  wait(28);
-  _intake(0);
-  */
+  driveR(-100);
+  wait(20.65);
+  // turn to flags
+  driveL(100);
+  driveR(100);
+  wait(9);
+  /*
+  // go back a bit
+  driveL(100);
+  driveR(-100);
+  wait(15);
+  // stop chassis
+  driveL(0);
+  driveR(0);
+  wait(8);
+  // run intake to shoot middle flag
+  _intake(127);
+    wait(28);
+    _intake(0);
+    */
   // allign to top flag
   driveL(-100);
-driveR(100);
-wait(8);
-// stop chassis
-driveL(0);
-driveR(0);
-wait(8);
- // run intake to shoot middle flag
-_intake(127);
+  driveR(100);
+  wait(8);
+  // stop chassis
+  driveL(0);
+  driveR(0);
+  wait(8);
+   // run intake to shoot middle flag
+  _intake(127);
   wait(28);
   _intake(0);
-   // turn to bottom flags
-driveL(100);
-driveR(100);
-wait(1);
-  // allign to bottom flag
-  driveL(-100);
-driveR(100);
-wait(13);
-// allign straight
+     // turn to bottom flags
   driveL(100);
-driveR(-100);
-wait(20);
-//brake
-driveL(0);
-driveR(0);
+  driveR(100);
+  wait(1);
+    // allign to bottom flag
+  driveL(-100);
+  driveR(100);
+  wait(13);
+  // allign straight
+  driveL(100);
+  driveR(-100);
+  wait(20);
+  //brake
+  driveL(0);
+  driveR(0);
 
 }
 
  void FLAGS_TOP_4P_RED()
 {
 // run shooter
-  shooter(127);
+shooter(127);
   // Go back and get the ball
-  driveL(-100);
+driveL(-100);
 driveR(100);
-  wait(21.85);
-  // stop
-  driveL(0);
+wait(21.85);
+// stop
+driveL(0);
 driveR(0);
 // run intake
-  _intake(127);
-  wait(17.85);
-  _intake(0);
-  // go back to tile
-  driveL(100);
+_intake(127);
+wait(17.85);
+_intake(0);
+// go back to tile
+driveL(100);
 driveR(-100);
 wait(21.485);
 // turn to flags
@@ -195,7 +195,7 @@ _intake(127);
   _intake(0);
   */
   // allign to top flag
-  driveL(-90);
+driveL(-90);
 driveR(90);
 wait(7);
 // stop chassis
@@ -204,18 +204,18 @@ driveR(0);
 wait(8);
  // run intake to shoot middle flag
 _intake(127);
-  wait(28);
-  _intake(0);
-   // turn to bottom flags
+wait(28);
+_intake(0);
+ // turn to bottom flags
 driveL(-90);
 driveR(-90);
 wait(1);
   // allign to bottom flag
-  driveL(-100);
+driveL(-100);
 driveR(100);
 wait(13);
 // allign straight
-  driveL(100);
+driveL(100);
 driveR(-100);
 wait(20);
 //brake
@@ -229,51 +229,48 @@ void PARKING_BLUE_BOTTOM()
 {
 // DRIVE BACK
 driveL(-100);
-  driveR(100);
-  wait(19.5);
+driveR(100);
+wait(19.5);
+// BRAKE
+driveL(0);
+driveR(0);
+
+// INTAKE BALL
+_intake(127);
+wait(23);
+_intake(0);
 
   // BRAKE
-  driveL(0);
-  driveR(0);
-
-  // INTAKE BALL
-  _intake(127);
-  wait(23);
-  _intake(0);
-
-  // BRAKE
-  driveL(0);
-  driveR(0);
-  wait (3);
-
-  // DRIVE FORWARD
+driveL(0);
+driveR(0);
+wait (3);
+// DRIVE FORWARD
 driveL(100);
-  driveR(-100);
-  wait(1.7);
+driveR(-100);
+wait(1.7);
+// TURN TO PLATFORM
+driveL(100);
+driveR(100);
+wait(10);
 
-  // TURN TO PLATFORM
-  driveL(100);
-  driveR(100);
-  wait(10);
-
-  // GET ON PLATFORM
-  driveL(-115);
-  driveR(115);
-  wait(5);
-
-  // BRAKE
-  driveL(0);
-  driveR(0);
-  wait (3);
-
-  // GET ON PLATFORM
-  driveL(-115);
-  driveR(115);
-  wait(29.9436);
+// GET ON PLATFORM
+driveL(-115);
+driveR(115);
+wait(5);
 
   // BRAKE
-  driveL(0);
-  driveR(0);
+driveL(0);
+driveR(0);
+wait (3);
+
+  // GET ON PLATFORM
+driveL(-115);
+driveR(115);
+wait(29.9436);
+
+  // BRAKE
+driveL(0);
+driveR(0);
 
 }
 
@@ -281,46 +278,45 @@ void PARKING_RED_BOTTOM()
 {
 // DRIVE BACK
 driveL(-100);
-  driveR(100);
-  wait(18);
+driveR(100);
+wait(18);
   // BRAKE
-  driveL(0);
-  driveR(0);
+driveL(0);
+driveR(0);
   // INTAKE BALL
-  _intake(127);
-  wait(23);
-  _intake(0);
+_intake(127);
+wait(23);
+_intake(0);
   // TURN TO PLATFORM
-  driveL(-100);
-  driveR(-100);
-  wait(12);
-  // DRIVE ON THE PLATFORM
-  driveL(-100);
-  driveR(100);
-  wait(39.5);
+driveL(-100);
+driveR(-100);
+wait(12);
+// DRIVE ON THE PLATFORM
+driveL(-100);
+driveR(100);
+wait(39.5);
   // BRAKE
-  driveL(0);
-  driveR(0);
-
+driveL(0);
+driveR(0);
 }
 
 void FLAGS_PARKING_TOP_7P_RED()
 {
   // GO BACK AND GET BALL
-  driveL(-100);
+driveL(-100);
 driveR(100);
 // RUN SHOOTER
-  shooter(127);
-  wait(19);
-  // BRAKE
-  driveL(0);
+shooter(127);
+wait(19);
+// BRAKE
+driveL(0);
 driveR(0);
 // INTAKE BALL
-  _intake(127);
-  wait(18.1);
-  _intake(0);
-  // GO BACK TO THE TILE
-  driveL(100);
+_intake(127);
+wait(18.1);
+_intake(0);
+// GO BACK TO THE TILE
+driveL(100);
 driveR(-100);
 wait(20);
 // TURN TO THE FLAGS
@@ -342,7 +338,7 @@ _intake(127);
   _intake(0);
   */
   // ALLIGN TO MIDDLE FLAGS
-  driveL(-100);
+driveL(-100);
 driveR(100);
 wait(12);
 // STOP CHASSIS
@@ -351,19 +347,19 @@ driveR(0);
 wait(8);
  // INTAKE BALL TO FLYWHEEL TO SHOOT
 _intake(127);
-  wait(27);
-  _intake(0);
+wait(27);
+_intake(0);
    // TURN TO THE BOTTOM FLAG
 driveL(-100);
 driveR(-100);
 wait(2);
   // HIT BOTTOM FLAG
-  driveL(-100);
+driveL(-100);
 driveR(100);
 wait(12.5);
 
 // GO STARIGHT FOR A BIT
-  driveL(100);
+driveL(100);
 driveR(-100);
 wait(15);
 // TURN A BUT TO STARIGHTEN UP
@@ -371,7 +367,7 @@ driveL(100);
 driveR(100);
 wait(1);
 // GO STARIGHT TO PLATFORM AREA
-  driveL(100);
+driveL(100);
 driveR(-100);
 wait(28.5);
   // TURN TO PLATFORM
@@ -379,13 +375,13 @@ driveL(100);
 driveR(100);
 wait(8.5);
 driveL(0);
-  driveR(0);
+driveR(0);
   // LIFT UP LIFT A BIT
 lift(127);
 wait(2);
 lift(0);
 // GO STARIGHT AND HIT THE WALL
-  driveL(100);
+driveL(100);
 driveR(-100);
 wait(5);
   // BRAKE
@@ -393,7 +389,7 @@ driveL(0);
 driveR(0);
 wait(10);
   // GO BACKARDS ON THE PLATFORM
-  driveL(-100);
+driveL(-100);
 driveR(100);
 wait(49.5);
 // BRAKE
@@ -406,20 +402,20 @@ void FLAGS_PARKING_TOP_7P_BLUE()
 {
 
   // GO BACK AND GET BALL
-  driveL(-100);
+driveL(-100);
 driveR(100);
 // RUN SHOOTER
-  shooter(127);
-  wait(19);
-  // BRAKE
-  driveL(0);
+shooter(127);
+wait(19);
+// BRAKE
+driveL(0);
 driveR(0);
 // INTAKE BALL
-  _intake(127);
-  wait(18.1);
-  _intake(0);
+_intake(127);
+wait(18.1);
+_intake(0);
   // GO BACK TO THE TILE
-  driveL(100);
+driveL(100);
 driveR(-100);
 wait(20);
 // TURN TO THE FLAGS
@@ -441,7 +437,7 @@ _intake(127);
   _intake(0);
   */
   // ALLIGN TO MIDDLE FLAGS
-  driveL(-100);
+driveL(-100);
 driveR(100);
 wait(12);
 // STOP CHASSIS
@@ -450,19 +446,19 @@ driveR(0);
 wait(8);
  // INTAKE BALL TO FLYWHEEL TO SHOOT
 _intake(127);
-  wait(27);
-  _intake(0);
-   // TURN TO THE BOTTOM FLAG
+wait(27);
+_intake(0);
+// TURN TO THE BOTTOM FLAG
 driveL(100);
 driveR(100);
 wait(2);
   // HIT BOTTOM FLAG
-  driveL(-100);
+driveL(-100);
 driveR(100);
 wait(12.5);
 
 // GO STARIGHT FOR A BIT
-  driveL(100);
+driveL(100);
 driveR(-100);
 wait(15);
 // TURN A BUT TO STARIGHTEN UP
@@ -470,7 +466,7 @@ driveL(-100);
 driveR(-100);
 wait(1);
 // GO STARIGHT TO PLATFORM AREA
-  driveL(100);
+driveL(100);
 driveR(-100);
 wait(29);
   // TURN TO PLATFORM
@@ -478,21 +474,21 @@ driveL(-100);
 driveR(-100);
 wait(8.5);
 driveL(0);
-  driveR(0);
+driveR(0);
   // LIFT UP LIFT A BIT
 lift(127);
 wait(2);
 lift(0);
 // GO STARIGHT AND HIT THE WALL
-  driveL(100);
+driveL(100);
 driveR(-100);
 wait(5);
-  // BRAKE
+// BRAKE
 driveL(0);
 driveR(0);
 wait(10);
   // GO BACKARDS ON THE PLATFORM
-  driveL(-100);
+driveL(-100);
 driveR(100);
 wait(50);
 // BRAKE
@@ -533,123 +529,123 @@ void flipped_button()
 {
 
 
- //switch the buttons for shooter
- if (vexRT[Btn7D] ==1){
-  flipper(70);
- }
- else if (vexRT[Btn7U] ==1){
-  flipper(-70);
- }
- else {
-  flipper(0);
- }
- //lift
- if (vexRT[Btn6U] ==1){
-   lift (120);
- }
- else if (vexRT[Btn6D] ==1){
-   lift (-120);
- }
- else{
-   lift(0);
- }
+   //switch the buttons for shooter
+   if (vexRT[Btn7D] ==1){
+    flipper(70);
+   }
+   else if (vexRT[Btn7U] ==1){
+    flipper(-70);
+   }
+   else {
+    flipper(0);
+   }
+   //lift
+   if (vexRT[Btn6U] ==1){
+     lift (120);
+   }
+   else if (vexRT[Btn6D] ==1){
+     lift (-120);
+   }
+   else{
+     lift(0);
+   }
 
-if (vexRT[Btn7R] == 1){
- motor[C_F_Left] = -30;
- motor[ycable2DriveR] = 20;
- motor[C_F_Right] = -30;
- motor[ycable1DriveL] = 20;
-}
-else{
- motor[C_F_Left] = 0;
- motor[ycable2DriveR] = 0;
- motor[C_F_Right] = 0;
- motor[ycable1DriveL] = 0;
-}
+  if (vexRT[Btn7R] == 1){
+   motor[C_F_Left] = -30;
+   motor[ycable2DriveR] = 20;
+   motor[C_F_Right] = -30;
+   motor[ycable1DriveL] = 20;
+  }
+  else{
+   motor[C_F_Left] = 0;
+   motor[ycable2DriveR] = 0;
+   motor[C_F_Right] = 0;
+   motor[ycable1DriveL] = 0;
+  }
 
 }
 
 void normal_btn()
 {
-// Drive b
-// Button for the lift up and down
-if (vexRT[Btn6U] == 1){
- _intake(120);
-}
-else if(vexRT[Btn6D] == 1){
- _intake (-120);
-}
-else{
- _intake (0);
-}
-    // Button for the shooter for top flag and middle flag
-  // This is for the top flag running shooter at full speed
-if (vexRT[Btn5U] == 1){
- shooter(127);
-}
-  //// This is for the middle flag running shooter at 100 speed
-  //else if(vexRT[Btn5DXmtr2] == 1){
-  // shooter(100);
-  //}
-  // If none of those buttons are pressed the shooter will not continue
-else{
- shooter(0);
-}
-  // Button for the flipper/claw
-  // This is to flip the cap while it is in the claw
-if (vexRT[Btn7U] == 1){
- flipper(65);
-}
-else if (vexRT [Btn7D] == 1){
- flipper (-65);
-}
-else{
- flipper(0);
-}
-  // Button for the rubberband intake to bring up to the shooter
-  // So the intake can pick up the balls
-if (vexRT[Btn8U] == 1){
- lift(120);
-}
-  // So the intake will let the balls out
-else if(vexRT[Btn8D] == 1){
- lift(-120);
-}
-else{
- lift(0);
-}
-   // Brake for the chassis
-if (vexRT[Btn7R] == 1){
- motor[C_F_Left] = -30;
- motor[ycable2DriveR] = 20;
- motor[C_F_Right] = -30;
- motor[ycable1DriveL] = 20;
-}
-else{
- motor[C_F_Left] = 0;
- motor[ycable2DriveR] = 0;
- motor[C_F_Right] = 0;
- motor[ycable1DriveL] = 0;
-}
+  // Drive b
+  // Button for the lift up and down
+  if (vexRT[Btn6U] == 1){
+   _intake(120);
+  }
+  else if(vexRT[Btn6D] == 1){
+   _intake (-120);
+  }
+  else{
+   _intake (0);
+  }
+      // Button for the shooter for top flag and middle flag
+    // This is for the top flag running shooter at full speed
+  if (vexRT[Btn5U] == 1){
+   shooter(127);
+  }
+    //// This is for the middle flag running shooter at 100 speed
+    //else if(vexRT[Btn5DXmtr2] == 1){
+    // shooter(100);
+    //}
+    // If none of those buttons are pressed the shooter will not continue
+  else{
+   shooter(0);
+  }
+    // Button for the flipper/claw
+    // This is to flip the cap while it is in the claw
+  if (vexRT[Btn7U] == 1){
+   flipper(65);
+  }
+  else if (vexRT [Btn7D] == 1){
+   flipper (-65);
+  }
+  else{
+   flipper(0);
+  }
+    // Button for the rubberband intake to bring up to the shooter
+    // So the intake can pick up the balls
+  if (vexRT[Btn8U] == 1){
+   lift(120);
+  }
+    // So the intake will let the balls out
+  else if(vexRT[Btn8D] == 1){
+   lift(-120);
+  }
+  else{
+   lift(0);
+  }
+     // Brake for the chassis
+  if (vexRT[Btn7R] == 1){
+    motor[C_F_Left] = -30;
+    motor[ycable2DriveR] = 20;
+    motor[C_F_Right] = -30;
+    motor[ycable1DriveL] = 20;
+  }
+  else{
+    motor[C_F_Left] = 0;
+    motor[ycable2DriveR] = 0;
+    motor[C_F_Right] = 0;
+    motor[ycable1DriveL] = 0;
+  }
 }
 task usercontrol()
 {
-while(true){
+  while(true){
 
 
-//// flippped button
-     //switch the channels
- driveL(vexRT[Ch3]);
- driveR(-vexRT[Ch2]);
+  //// flippped button
+       //switch the channels
+   driveL(vexRT[Ch3]);
+   driveR(-vexRT[Ch2]);
 
- if (vexRT[Btn5D] == 1){
-  flipped_button();
- }
- else{
-  normal_btn();
+   if (vexRT[Btn5D] == 1){
+    flipped_button();
+   }
+   else{
+    normal_btn();
+    }
+
   }
-
-}
 }
 
 
