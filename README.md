@@ -1,5 +1,5 @@
-# 356B_RobotC_2018
-Robotics Code for 2019 VEX Provincials in C 
+# 356B_RobotC_2018-2019
+Robotics Code for the 2018 - 2019 Season for the VEX Provincials in C 
 
 Autonomous Code Completed using the VEX V4 control system.
 
@@ -11,4 +11,4 @@ Autonomous Code Completed using the VEX V4 control system.
 
 
 Jil Shah
-~ Code Implemented in 2019 ~
+~ Code Implemented in 2018 - 2019 ~ 
